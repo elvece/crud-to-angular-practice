@@ -39,6 +39,8 @@ app.controller('beerController', function($scope, httpFactory, $timeout){
     });
   };
 
+  $scope.putBeer = function(){
 
+  };
 
 });
