@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 app.use('/api/v1/', apiRoutes);
 
 app.use('/', function(req, res){
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(__dirname, '../client/views', 'index.html'));
 });
 
 
