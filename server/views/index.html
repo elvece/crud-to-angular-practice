@@ -1,52 +1,56 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Beer App</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container">
 
-{% block title %}{% endblock %}
+      <div class="add-beer">
 
+        <h1 class="text-center">Add a Beer</h1>
 
-{% block content %}
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" placeholder="Enter the beer name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="type" placeholder="Enter the beer type" required>
+          </div>
+          <div class="form-group">
+            <input type="number" step="0.1" class="form-control" id="abv" placeholder="Enter the beer abv" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
 
-  <div class="container">
-
-  <div class="add-beer">
-
-    <h1 class="text-center">Add a Beer</h1>
-
-    <form>
-      <div class="form-group">
-        <input type="text" class="form-control" id="name" placeholder="Enter the beer name" required>
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="type" placeholder="Enter the beer type" required>
+
+      <br><hr>
+
+      <div class="message-section">
+        <p class="alert alert-info" role="alert" id="message"></p>
       </div>
-      <div class="form-group">
-        <input type="number" step="0.1" class="form-control" id="abv" placeholder="Enter the beer abv" required>
+
+      <div class="beer-section">
+        <h2 class="text-center"></h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>ABV</th>
+            </tr>
+          </thead>
+          <tbody id="all-beers"></tbody>
+        </table>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Submit</button>
-    </form>
+    </div>
 
-  </div>
-
-  <br><hr>
-
-  <div class="message-section">
-    <p class="alert alert-info" role="alert" id="message"></p>
-  </div>
-
-  <div class="beer-section">
-    <h2 class="text-center"></h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>ABV</th>
-        </tr>
-      </thead>
-      <tbody id="all-beers"></tbody>
-    </table>
-  </div>
-
-
-  </div>
-
-{% endblock %}
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+  </body>
+</html>
