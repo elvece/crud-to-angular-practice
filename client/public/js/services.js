@@ -12,6 +12,11 @@ app.factory('httpFactory', ['$http', function($http){
     return $http.post(url, payload);
   };
 
+  //put request
+  obj.put = function(url, payload){
+    return $http.put(url, payload);
+  };
+
   //delete request
   obj.delete = function(url){
     return $http.delete(url);

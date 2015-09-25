@@ -2,6 +2,8 @@ app.controller('beerController', function($scope, httpFactory, $timeout){
 
   $scope.success = false;
   $scope.message = "";
+  $scope.edit = false;
+  $scope.findBeer = "";
 
   //sometimes need to clear form?
   // $scope.beer = {};
@@ -45,6 +47,18 @@ app.controller('beerController', function($scope, httpFactory, $timeout){
     .then(function(response){
       $scope.beer = response.data;
     });
+    $scope.edit = true;
+  };
+
+  $scope.updateBeer = function(){
+    var update = $scope.beer;
+    httpFactory.put($scope.findBeer, update);
+    getBeers('/api/v1/beers');
+    $scope.beer = {};
+    $scope.success = true;
+    $scope.message = "Updated beer!";
+    $timeout(messageTimeout, 5000);
+    $scope.edit = false;
   };
 
   $scope.deleteBeer = function(id){
